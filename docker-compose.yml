@@ -4,30 +4,31 @@ services:
     networks:
       - inception
     build: ./MariaDB
-    env_file: ./.env
+    image: mariadb:inception
+    env_file: .env
     volumes:
       - mariadb:/var/lib/mysql 
     restart: unless-stopped
     expose:
-      - 3306
+      - "3306"
 
   nginx:
     container_name: nginx
     volumes:
-      - wordpress:/var/www/wordpress
+      - wordpress:/var/www/html
     networks:
       - inception
     depends_on:
       - wordpress
     build: ./NGINX
-    env_file: ./.env
+    env_file: .env
     ports:
       - "443:443"
     restart: always
 
   wordpress:
     container_name: wordpress
-    env_file: ./.env
+    env_file: .env
     volumes: 
       - wordpress:/var/www/wordpress
     networks:

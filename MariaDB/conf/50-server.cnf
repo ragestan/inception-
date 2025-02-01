@@ -3,3 +3,4 @@ port = 3306
 bind_address = *
 datadir = /var/lib/mysql
 user = mysql
+max_allowed_packet=64M
