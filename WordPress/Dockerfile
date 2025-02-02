@@ -19,4 +19,4 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 RUN wp core download --allow-root
 
-CMD ["auto_config.sh"]
+CMD ["sh","/bin/auto_config.sh"]
