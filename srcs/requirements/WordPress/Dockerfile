@@ -3,8 +3,8 @@ RUN apt update -y
 RUN apt upgrade -y
 RUN apt-get -y install wget sendmail
 RUN apt-get -y install  php7.3
-RUN apt-get -y install	php-fpm
-RUN apt-get -y install	php-mysql
+RUN apt-get -y install	php7.3-fpm
+RUN apt-get -y install	php7.3-mysql
 RUN apt-get -y install	mariadb-client
 COPY ./conf/auto_config.sh /bin/auto_config.sh
 RUN chmod +x /bin/auto_config.sh
