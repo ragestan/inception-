@@ -23,14 +23,16 @@ services:
     build: ./NGINX
     env_file: .env
     ports:
-      - "433:433"
+      - "443:443"
+    expose:
+      - 443
     restart: always
 
   wordpress:
     container_name: wordpress
     env_file: .env
     volumes: 
-      - wordpress:/var/www/wordpress
+      - wordpress:/var/www/html
     networks:
       - inception
     build: ./WordPress
