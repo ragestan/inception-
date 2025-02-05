@@ -1,5 +1,6 @@
 DIR= cd srcs
 RUN= docker compose up --build -d
+UP= docker compose up -d
 BUILD= docker compose build
 PS= docker compose ps
 DOWN= docker compose down
@@ -16,6 +17,10 @@ ps:
 	${DIR} && ${PS}
 clean:
 	${DIR} && ${DOWN} -v
+down:
+	${DIR} && ${DOWN}
+up:
+	${DIR} && ${UP}
 mount_rm:
 	sudo rm -rf /home/zbentalh/data
 show_vol:
